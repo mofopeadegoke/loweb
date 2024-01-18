@@ -1,13 +1,18 @@
+:root {
+    --bg-color-transparent: rgba(51, 51, 51, 0.2);
+    --bg-color: rgb(51, 51, 51);
+    --dark-blue: #101318;
+}
 body {
     font-family: 'Poppins', sans-serif;
 }
 article.introSect {
     display: grid;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: calc(100% - 500px) 500px;
     grid-template-rows: auto;
 }
 article.introSect article.content {
-    background: #101318;
+    background: var(--dark-blue);
     color: var(--navText-color);
     display: flex;
     place-content: center;
@@ -25,8 +30,10 @@ article.aboutSect {
     text-align: center;
     background: rgba(51, 51, 51, 0.2);
 }
-article.aboutSect h2 {
+h2 {
     font-family: 'Jost', sans-serif;
+    color: rgb(51, 51, 51);
+    font-size: 2rem;
 }
 article.mediaSect {
     padding: 2rem 3rem;
@@ -38,6 +45,169 @@ article.mediaSect .header {
 article.mediaSect .mainCont {
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: 15rem 15rem;
     gap: 1rem;
+}
+article.mediaSect article.moreBtns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 2rem;
+    margin-top: 2rem;
+}
+article.mediaSect iframe {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+}
+article.mediaSect h2{
+    text-transform: uppercase;
+}
+article.invtSect {
+    padding: 3rem 4rem;
+    background-color: var(--bg-color-transparent);
+}
+article.invtSect article.headerSect {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+article.invtSect label {
+    display: inline-flex;
+    flex-direction: column;
+    row-gap: 5px;
+    width: 100%;
+}
+article.invtSect fieldset {
+    display: grid;
+    grid-template-columns: 45% 45%;
+    grid-template-rows: auto auto auto;
+    row-gap: 1rem;
+    justify-content: space-between;
+    border: none;
+    max-width: 100%;
+}
+article.invtSect input {
+    padding: 6px 10px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    border: 1px solid;
+    outline: none;
+    transition: all 0.2s ease-in;
+}
+article.invtSect input:focus {
+    border-color: var(--bg-color-transparent);
+}
+article.invtSect form {
+    border: none;
+    background-color: #fff;
+    border-top: 2px solid var(--bg-color);
+    border-bottom: 2px solid var(--bg-color);
+    padding: 2rem;
+}
+article.invtSect label.emailLabel {
+    grid-column: 1 / span 2;
+}
+article.invtSect article.btn {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+article.partnerSect {
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    column-gap: 2rem;
+    justify-content: space-between;
+}
+article.partnerSect .dets {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    column-gap: 1rem;
+    margin-block: 1rem;
+}
+article.partnerSect .dets .bold {
+    font-weight: bold;
+}
+article.partnerSect .socials {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 1rem;
+    margin-top: 5px;
+}
+article.partnerSect h3 {
+    margin-bottom: 5px;
+}
+@media all and (max-width: 1250px) {
+    article.introSect {
+        grid-template-columns: auto;
+    }
+    article.introSect img {
+        display: none;
+    }
+    article.introSect article.content {
+        height: 100vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images//LOprofilebg.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    article.introSect article.content * {
+        z-index: 99;
+    }
+}
+@media all and (max-width: 1000px) {
+    article.mediaSect .mainCont {
+        grid-template-columns: 100%;
+        grid-template-rows: 20rem 20rem 20rem 20rem;
+    }
+}
+@media all and (max-width: 900px) {
+    article.partnerSect {
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto;
+        row-gap: 2rem;
+    }
+}
+@media all and (max-width: 750px) {
+    article.introSect article.content h1 {
+        font-size: 2.5rem;
+    }
+    article.introSect article.content p {
+        font-size: 1.1rem;
+    }
+    article.introSect article.content {
+        height: 70vh;
+    }
+    article.aboutSect {
+        padding: 1.5rem;
+    }
+    article.mediaSect {
+        padding: 2rem;
+    }
+    article.invtSect {
+        padding: 1.5rem 1rem;
+    }
+    article.invtSect form {
+        padding: 1rem;
+    }
+    article.invtSect input {
+        font-size: 0.9rem;
+        padding: 3px;
+    }
+    article.invtSect fieldset {
+        row-gap: 0.6rem;
+    }
+    article.partnerSect {
+        padding: 1.5rem;
+    }
+    footer {
+        padding: 1rem;
+    }
+    article.partnerSect .dets {
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto;
+        row-gap: 1rem;
+    }
 }

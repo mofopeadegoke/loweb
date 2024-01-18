@@ -1,0 +1,7 @@
+a.socialArticle {
+    display: inline-flex;
+    border-radius: 50%;
+}
+a.socialArticle img {
+    width: 1.5rem;
+}

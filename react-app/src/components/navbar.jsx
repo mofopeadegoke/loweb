@@ -6,15 +6,14 @@ export default function Navbar() {
                 <p>Lawrence Oyor's Logo</p>
                 <ul>
                     <li>
-                        <a href="#">
+                        <a href="#home">
                             Home
                         </a>
                     </li>
-                    <li><a href="#">About me</a></li>
-                    <li><a href="#">Media Library</a></li>
-                    <li><a href="#">Book a session</a></li>
-                    <li><a href="#">Invite me</a></li>
-                    <li><a href="#">Parthner with us</a></li>
+                    <li><a href="#about">About me</a></li>
+                    <li><a href="#media">Media Library</a></li>
+                    <li><a href="#invite">Invite me</a></li>
+                    <li><a href="#partner">Parthner with us</a></li>
                 </ul>
             </nav>
         </>
