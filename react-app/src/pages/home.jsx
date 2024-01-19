@@ -9,9 +9,18 @@ import brownYoutube from "../images/youtube.svg";
 import brownX from "../images/x-twitter.svg";
 import Social from "../components/social";
 import Footer from "../components/footer";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+import Loader from "../components/loader";
 import "../styles/home.css"
 export default function HomePage() {
+    const [isLoading, setLoading] = useState(true);
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false);
+            document.querySelector("body").style.display = "block";
+            document.querySelector("body").style.backgroundColor = "#fff"
+        }, 10000)
+    }, []);
     const smoothScrollTo = (target) => {
     const element = document.querySelector(target);
     if (element) {
@@ -31,9 +40,12 @@ export default function HomePage() {
         smoothScrollTo(targetId);
       });
     });
-  }, []);
+  }, [isLoading]);
+  
     return (
         <>
+        {isLoading ? <Loader /> : (
+            <>
             <Navbar />
             <article className="introSect" id="home">
                 <article className="content">
@@ -69,7 +81,7 @@ export default function HomePage() {
                     <h2 role="heading">Invitation to Meetings</h2>
                     <p>Please note that if your invitation is accepted, a round trip flight has to be booked for two people.</p>
                 </article>
-                <form action="">
+                <form action="https://formspree.io/f/xyyrzaon" method="POST">
                     <fieldset>
                         <label htmlFor="">
                             <span>Ministry Name</span>
@@ -110,16 +122,16 @@ export default function HomePage() {
                     <article className="dets">
                         <article className="naira">
                             <h4 role="heading">Naira Account</h4>
-                            <p><span className="bold">Account Name: </span> Femi Lazarus Ministries</p>
+                            <p><span className="bold">Account Name: </span> XXXXXXXXX</p>
                             <p><span className="bold">Bank Name: </span>UBA</p>
-                            <p><span className="bold">Account Number: </span>2215005289</p>
+                            <p><span className="bold">Account Number: </span>XXXXXXXXX</p>
                         </article>
                         <article className="dollar">
                             <h4 role="heading">Dollar Account</h4>
-                            <p><span className="bold">Account Name: </span> Femi Lazarus Ministries</p>
+                            <p><span className="bold">Account Name: </span> XXXXXXXXX</p>
                             <p><span className="bold">Bank Name: </span>UBA</p>
-                            <p><span className="bold">Account Number: </span>3003979764</p>
-                            <p><span className="bold">Swift Code: </span>UNAFNGLA</p>
+                            <p><span className="bold">Account Number: </span>XXXXXXXXX</p>
+                            <p><span className="bold">Swift Code: </span>XXXXXXXXX</p>
                         </article>
                     </article>
                     <p>Connect with Pastor Lawrence Oyor on every social media platform</p>
@@ -132,6 +144,8 @@ export default function HomePage() {
                 </article>
             </article>
             <Footer />
+            </>
+        )}
         </>
     )
 }

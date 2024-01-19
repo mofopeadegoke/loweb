@@ -192,10 +192,6 @@ article.partnerSect h3 {
     article.invtSect form {
         padding: 1rem;
     }
-    article.invtSect input {
-        font-size: 0.9rem;
-        padding: 3px;
-    }
     article.invtSect fieldset {
         row-gap: 0.6rem;
     }
@@ -209,5 +205,14 @@ article.partnerSect h3 {
         grid-template-columns: 100%;
         grid-template-rows: auto auto;
         row-gap: 1rem;
+    }
+}
+@media all and (max-width: 550px) {
+    article.invtSect fieldset {
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto auto auto auto;
+    }   
+    article.invtSect label.emailLabel {
+        grid-column:  1 / span 1;
     }
 }
