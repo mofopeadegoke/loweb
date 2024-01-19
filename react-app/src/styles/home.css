@@ -215,4 +215,14 @@ article.partnerSect h3 {
     article.invtSect label.emailLabel {
         grid-column:  1 / span 1;
     }
+    article.mediaSect {
+        padding: 1.5rem;
+    }
+    article.introSect article.content h1 {
+        font-size: 2rem;
+    }
+
+    article.introSect article.content p {
+        font-size: 0.7rem;
+    }
 }

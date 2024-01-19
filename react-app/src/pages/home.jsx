@@ -19,7 +19,7 @@ export default function HomePage() {
             setLoading(false);
             document.querySelector("body").style.display = "block";
             document.querySelector("body").style.backgroundColor = "#fff"
-        }, 10000)
+        }, 15000)
     }, []);
     const smoothScrollTo = (target) => {
     const element = document.querySelector(target);
