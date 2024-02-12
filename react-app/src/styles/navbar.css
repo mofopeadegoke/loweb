@@ -5,7 +5,7 @@ nav.navbar {
     display: flex;
     justify-content: space-between;
     padding: 3rem;
-    position: fixed;
+    position: absolute;
     background: rgba(51, 51, 51, 0.7);
     width: 100%;
     inset: 0;

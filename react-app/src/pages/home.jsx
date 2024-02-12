@@ -12,14 +12,19 @@ import Footer from "../components/footer";
 import { useState, useEffect } from "react";
 import Loader from "../components/loader";
 import "../styles/home.css"
+// Importing Animate on Scroll
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 export default function HomePage() {
     const [isLoading, setLoading] = useState(true);
     useEffect(() => {
-        setTimeout(() => {
-            setLoading(false);
-            document.querySelector("body").style.display = "block";
-            document.querySelector("body").style.backgroundColor = "#fff"
-        }, 15000)
+        Aos.init({duration: 1500});
+        // setTimeout(() => {
+        //     setLoading(false);
+        //     document.querySelector("body").style.display = "block";
+        //     document.querySelector("body").style.backgroundColor = "#fff"
+        // }, 3000)
     }, []);
     const smoothScrollTo = (target) => {
     const element = document.querySelector(target);
@@ -44,7 +49,7 @@ export default function HomePage() {
   
     return (
         <>
-        {isLoading ? <Loader /> : (
+        {false ? <Loader /> : (
             <>
             <Navbar />
             <article className="introSect" id="home">
@@ -55,23 +60,23 @@ export default function HomePage() {
                 <img src={introImg} alt="A picture of Lawrence Oyor" />
             </article>
             <article className="aboutSect" id="about">
-                <article className="header">
+                <article className="header" data-aos="fade-up">
                     <h2>ABOUT ME</h2>
                     <p>Pastor Lawrence Oyor Gomba is a teacher, evangelist, prophet, preacher and Gospel Music Minister. He was born as a twin to a Christian home based in Ibadan, Oyo State, Nigeria. Pastor Lawrence Oyor is happily married to his heartthrob, Pastor Mrs. Darasimi Lawrence-Oyor (Nee Mike-Bamiloye). They got married on 10th October, 2020 and are blessed with a son, Elijah Lawrence-Oyor who was born on 16th, July, 2021.</p>
                 </article>
             </article>
             <article className="mediaSect" id="media">
-                <article className="header">
+                <article className="header" data-aos="fade-down">
                     <h2 role="heading">My Messages</h2>
                     <p>With Pastor Lawrence Oyor, every minute counts as God has placed His Wisdom, and that which is needed to navigate the body of Christ in this season on him. Listen attentively to these messages and you will not lack light and direction.</p>
                 </article>
                 <article className="mainCont">
-                    <iframe src="https://www.youtube.com/embed/IjsAOpDXWxY?si=tLlzHPM_k6fSo5-0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-                    <iframe src="https://www.youtube.com/embed/K49f2qNFiqI?si=QJIDmqz98LhMJm6C" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-                    <iframe src="https://www.youtube.com/embed/IjsAOpDXWxY?si=tLlzHPM_k6fSo5-0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-                    <iframe src="https://www.youtube.com/embed/K49f2qNFiqI?si=QJIDmqz98LhMJm6C" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/IjsAOpDXWxY?si=tLlzHPM_k6fSo5-0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen data-aos="fade-right"></iframe>
+                    <iframe src="https://www.youtube.com/embed/K49f2qNFiqI?si=QJIDmqz98LhMJm6C" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen data-aos="fade-left"></iframe>
+                    <iframe src="https://www.youtube.com/embed/IjsAOpDXWxY?si=tLlzHPM_k6fSo5-0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen data-aos="fade-right"></iframe>
+                    <iframe src="https://www.youtube.com/embed/K49f2qNFiqI?si=QJIDmqz98LhMJm6C" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen data-aos="fade-left"></iframe>
                 </article>
-                <article className="moreBtns">
+                <article className="moreBtns" data-aos="fade-up">
                     <PillButton btnValue="Get more on spotify" isImg={true} imgUrl={spotifyLogo} imgAlt="The spotify logo"/>
                     <PillButton btnValue="Get more on telegram" isImg={true} imgUrl={telegramLogo} imgAlt="The telegram logo"/>
                 </article>
@@ -112,11 +117,11 @@ export default function HomePage() {
                 </form>
             </article>
             <article className="partnerSect" id="partner">
-                <article className="abt">
+                <article className="abt" data-aos="fade-right">
                     <h3 role="heading">Pastor Lawrence Oyor</h3>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae asperiores corporis velit sit, fugiat, omnis deleniti est perspiciatis ducimus expedita adipisci praesentium quam, doloremque mollitia atque ullam ex quae! Corporis maiores in deleniti quas mollitia saepe sit harum nulla cumque sunt iusto obcaecati, aut quod? Illo quas deserunt minima porro?</p>
                 </article>
-                <article className="partner">
+                <article className="partner" data-aos="fade-left">
                     <h3 role="heading">Partner with us</h3>
                     <p>Kindly use the following account details to partner with Pastor Lawrence Oyor's Ministry</p>
                     <article className="dets">
